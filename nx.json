@@ -19,17 +19,6 @@
           "watchDepsName": "watch-deps"
         }
       }
-    },
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview",
-        "buildDepsTargetName": "build-deps",
-        "watchDepsTargetName": "watch-deps",
-        "serveStaticTargetName": "serve-static"
-      }
     }
   ],
   "nxCloudId": "6a1ab1dfa74401ab3fcf1c14",

@@ -7,7 +7,6 @@ RUN npm ci
 
 COPY . .
 RUN npx nx build server
-# The webpack bundle externalises node_modules, so keep only production deps.
 RUN npm prune --omit=dev
 
 # ---- Runtime stage ----
@@ -20,7 +19,7 @@ ENV NODE_ENV=production \
     SCHEMA_CACHE_TTL=60
 
 COPY --from=build /repo/node_modules ./node_modules
-COPY --from=build /repo/apps/server/dist ./
+COPY --from=build /repo/dist/apps/server ./
 COPY --from=build /repo/config ./config
 
 # Persisted template store (mounted as a volume by docker-compose).

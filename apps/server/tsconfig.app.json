@@ -4,6 +4,7 @@
     "paths": {
       "@open-doc/shared": ["../../libs/shared/src/index.ts"]
     },
+    "rootDir": "src",
     "outDir": "../../dist/apps/server",
     "types": ["node", "multer"],
     "experimentalDecorators": true,

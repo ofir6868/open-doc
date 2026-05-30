@@ -57,7 +57,6 @@
     "@nx/nest": "^22.7.5",
     "@nx/node": "22.7.5",
     "@nx/web": "22.7.5",
-    "@nx/webpack": "22.7.5",
     "@swc-node/register": "1.11.1",
     "@swc/core": "1.15.8",
     "@swc/helpers": "0.5.18",
@@ -78,8 +77,7 @@
     "typescript": "~5.9.2",
     "vite": "^8.0.14",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.7",
-    "webpack-cli": "^5.1.4"
+    "vitest": "^4.1.7"
   },
   "workspaces": [
     "packages/*",

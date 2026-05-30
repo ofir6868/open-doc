@@ -7,19 +7,13 @@
     "targets": {
       "build": {
         "executor": "nx:run-commands",
+        "outputs": [
+          "{workspaceRoot}/dist/apps/server",
+          "{workspaceRoot}/libs/shared/dist"
+        ],
         "options": {
-          "command": "webpack-cli build",
-          "args": [
-            "--node-env=production"
-          ],
+          "command": "tsc --build tsconfig.app.json",
           "cwd": "apps/server"
-        },
-        "configurations": {
-          "development": {
-            "args": [
-              "--node-env=development"
-            ]
-          }
         }
       },
       "prune-lockfile": {
@@ -59,21 +53,13 @@
       "serve": {
         "continuous": true,
         "executor": "@nx/js:node",
-        "defaultConfiguration": "development",
         "dependsOn": [
           "build"
         ],
         "options": {
           "buildTarget": "server:build",
+          "main": "dist/apps/server/main.js",
           "runBuildTargetDependencies": false
-        },
-        "configurations": {
-          "development": {
-            "buildTarget": "server:build:development"
-          },
-          "production": {
-            "buildTarget": "server:build:production"
-          }
         }
       }
     }
