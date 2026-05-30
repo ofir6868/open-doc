@@ -1,8 +1,12 @@
 # open-doc
 
+[![CI](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Docker](https://img.shields.io/badge/docker-compose-ready-blue?logo=docker)](docker-compose.yml)
+
 Self-hosted document templating for Microsoft Word. Map fields in a `.docx`
 using a Word add-in, store it as a reusable template, then generate filled
 documents from JSON data over a simple HTTP API.
+
+![open-doc UI](docs/screenshot.png)
 
 - **Word-native templates** — fields are real Word *content controls*, so a
   template is just a `.docx` your users already know how to edit.
