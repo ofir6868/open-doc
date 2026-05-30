@@ -52,3 +52,7 @@ Thumbs.db
 .claude/settings.local.json
 .nx/polygraph
 .nx/self-healing
+
+# Runtime template storage (TEMPLATE_DIR) — user data, not source
+/templates/*.docx
+/templates/*.meta.json

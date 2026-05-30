@@ -1,1 +1,0 @@
-{"id":"Checking","name":"Checking-template","size":23667,"createdAt":"2026-05-30T17:56:05.917Z","updatedAt":"2026-05-30T17:56:05.917Z","fields":["case.title","client.firstName","client.lastName","client.email","case.date","case.number"]}
