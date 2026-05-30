@@ -1,0 +1,35 @@
+:root {
+  --od-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+  --od-paper-top: #f7f6f1;
+  --od-paper-bottom: #eeede6;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* Warm paper tone so white cards and the nav lift off the page. */
+  background-color: var(--od-paper-top);
+  background-image: linear-gradient(180deg, var(--od-paper-top) 0%, var(--od-paper-bottom) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Let the warm page show through the provider instead of a flat white fill. */
+.od-provider {
+  background-color: transparent !important;
+  min-height: 100%;
+}
+
+/* Optical-size + tighter tracking for the editorial display face. */
+.od-display {
+  font-family: var(--od-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}

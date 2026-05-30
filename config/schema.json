@@ -1,0 +1,14 @@
+{
+  "client": {
+    "firstName": "string",
+    "lastName": "string",
+    "email": "string",
+    "name": "string",
+    "address": "string"
+  },
+  "case": {
+    "number": "string",
+    "date": "date",
+    "title": "string"
+  }
+}

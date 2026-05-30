@@ -1,0 +1,39 @@
+# open-doc: NestJS API + static web UI behind nginx.
+#
+#   docker compose up --build
+#   → web UI at http://localhost:8080   (API proxied under /api)
+#   → API directly at http://localhost:3000/api
+#
+services:
+  server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+      TEMPLATE_DIR: /data/templates
+      # Point at a remote JSON schema instead of the bundled file if you like:
+      # SCHEMA_URL: https://example.com/schema.json
+      SCHEMA_CACHE_TTL: 60
+      STRICT_MODE: "false"
+    volumes:
+      - templates:/data/templates
+      # Edit config/schema.json on the host and it's picked up live.
+      - ./config:/app/config:ro
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    depends_on:
+      - server
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+volumes:
+  templates:

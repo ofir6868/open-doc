@@ -1,0 +1,1 @@
+{"id":"Checking-copy","name":"Checking-template (copy)","size":23667,"createdAt":"2026-05-30T18:20:29.357Z","updatedAt":"2026-05-30T18:49:18.320Z","fields":["case.title","client.firstName","client.lastName","client.email","case.date","case.number"],"description":"","tags":["finance"]}

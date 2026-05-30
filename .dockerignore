@@ -1,0 +1,15 @@
+node_modules
+**/node_modules
+dist
+**/dist
+.nx
+tmp
+out-tsc
+coverage
+.git
+.github
+.vscode
+.idea
+*.log
+templates
+.env

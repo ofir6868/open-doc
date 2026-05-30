@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+# Run Nx without the daemon or Nx Cloud — keeps CI self-contained and avoids
+# the "complete your Nx Cloud workspace" gating that otherwise fails the run.
+env:
+  NX_DAEMON: 'false'
+  NX_CLOUD_ACCESS_TOKEN: ''
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Informational only — the repo isn't fully prettier-clean yet.
+      - name: Format check
+        continue-on-error: true
+        run: npx prettier --check "apps/**/*.{ts,tsx}" "libs/**/*.ts" "scripts/**/*.mjs"
+
+      - name: Typecheck
+        run: |
+          npx tsc --noEmit -p apps/server/tsconfig.app.json
+          npx tsc --noEmit -p apps/web/tsconfig.json
+
+      - name: Unit tests
+        run: npx vitest run apps/server/src
+
+      - name: Build server
+        run: npx nx build server
+
+      - name: Build web
+        run: npx vite build --config apps/web/vite.config.ts
