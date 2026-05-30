@@ -2,20 +2,24 @@
 
 [![CI](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Docker](https://img.shields.io/badge/docker-compose-ready-blue?logo=docker)](docker-compose.yml)
 
-Self-hosted document templating for Microsoft Word. Map fields in a `.docx`
-using a Word add-in, store it as a reusable template, then generate filled
-documents from JSON data over a simple HTTP API.
+The **complete, self-hosted** Word document automation stack — template
+mapping, management, and generation — all open-source, all on your own
+infrastructure. No cloud dependency, no data leaving your network.
 
 ![open-doc UI](docs/screenshot.png)
 
-- **Word-native templates** — fields are real Word *content controls*, so a
-  template is just a `.docx` your users already know how to edit.
-- **Seamless fills** — values are injected into the existing runs, preserving
-  fonts, bold/italic, RTL/Hebrew direction, and document layout. The generated
-  document looks like someone typed the values in by hand.
-- **Web UI + REST API** — manage templates and generate documents from a
-  browser, or call the API from your own backend.
-- **Self-hosted** — runs as two containers (API + web) with `docker compose`.
+Most existing tools only solve one piece of the puzzle: a generation-only
+library with no UI, or a cloud SaaS that your documents must pass through.
+open-doc ships the full lifecycle in a single `docker compose up`:
+
+- **Word add-in** — map fields directly inside Word using real *content
+  controls*; no custom syntax, no XML editing.
+- **Web UI + REST API** — upload, preview, and manage templates from a
+  browser; generate filled `.docx` files by POSTing JSON to one endpoint.
+- **Seamless fills** — values go into the document's existing runs, preserving
+  fonts, bold/italic, RTL/Hebrew direction, and layout exactly.
+- **On-premise** — runs as two containers on your own server. Sensitive
+  documents never leave your infrastructure.
 
 ---
 
