@@ -1,6 +1,6 @@
 # open-doc
 
-[![CI](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Docker](https://img.shields.io/badge/docker-compose-ready-blue?logo=docker)](docker-compose.yml)
+[![CI](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml/badge.svg)](https://github.com/ofir6868/open-doc/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Docker](https://img.shields.io/badge/docker--compose-ready-blue?logo=docker)](docker-compose.yml)
 
 The **complete, self-hosted** Word document automation stack — template
 mapping, management, and generation — all open-source, all on your own
